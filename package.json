@@ -1,6 +1,6 @@
 {
-  "name": "nodefony-demo",
-  "version": "3.2.2",
+  "name": "project",
+  "version": "1.0.0",
   "description": "Nodefony Node.js full-stack web framework",
   "main": "./nodefony",
   "scripts": {
@@ -34,6 +34,7 @@
     "node": ">=8"
   },
   "dependencies": {
+    "@nodefony/core": "../nodefony-core/src/nodefony/core",
     "@nodefony/demo-bundle": "file:../nodefony-core/src/bundles/demo-bundle",
     "@nodefony/documentation-bundle": "file:../nodefony-core/src/nodefony/bundles/documentation-bundle",
     "@nodefony/framework-bundle": "file:../nodefony-core/src/nodefony/bundles/framework-bundle",
@@ -44,11 +45,34 @@
     "@nodefony/security-bundle": "file:../nodefony-core/src/nodefony/bundles/security-bundle",
     "@nodefony/sequelize-bundle": "file:../nodefony-core/src/nodefony/bundles/sequelize-bundle",
     "@nodefony/unittests-bundle": "file:../nodefony-core/src/nodefony/bundles/unittests-bundle",
-    "nodefony": "file:../nodefony-core"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-hot-loader": "^1.3.9",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "img-loader": "^3.0.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-pre-gyp": "^0.10.0",
+    "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "raw-loader": "^0.5.1",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglify-es": "^3.3.9",
+    "uglifycss": "^0.0.29",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.11.1",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   },
-  "devDependencies": {
-    "jshint": "2.9.5"
-  },
+  "devDependencies": {},
   "author": "name <mail@domain.com>",
   "readmeFilename": "README.md",
   "contributors": [
