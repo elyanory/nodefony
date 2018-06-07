@@ -142,6 +142,7 @@ list:
 
 deploy:
 	./node_modules/pm2/bin/pm2 update
+	npm  install --only=production
 	./nodefony pm2
 
 webpack:
@@ -159,7 +160,7 @@ framework:
 	@echo "#######################################" ;
 	@echo "";
 
-	@if [ -e .git ] ; then \
+	@if [ -e .gitmodules ] ; then \
 		git submodule sync ; \
 		git submodule update --init --recursive ; \
 	fi
@@ -253,6 +254,14 @@ clean:
 		echo "###################################################" ;\
 		echo ""; \
 		rm -rf web/* ; \
+	fi
+	@if [ -e  package-lock.json ] ; then \
+	echo ""; \
+	echo "###################################################" ;\
+	echo "#            CLEAN  WEB PUBLIC DIRECTOY           #" ;\
+	echo "###################################################" ;\
+	echo ""; \
+	rm -f package-lock.json ; \
 	fi
 
 	make framework ;

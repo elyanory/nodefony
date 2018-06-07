@@ -27,9 +27,18 @@ system:
       ca                        : "config/certificates/ca/nodefony-root-ca.crt.pem"
       options:
         rejectUnauthorized      : true
+  devServer:
+    inline                      : true
+    hot                         : false
+    hotOnly                     : false
+    overlay                     : true
+    logLevel                    : info        # none, error, warning or info
+    progress                    : false
+    protocol                    : https
+    websocket                   : true
 
   bundles:
-    demo                        : "src/bundles/demoBundle"
+    demo-bundle                 : "@nodefony/demo-bundle"
 
   #################
   # SYSLOG NODEFONY

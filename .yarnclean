@@ -1,9 +1,9 @@
 # test directories
 __tests__
+#test
+#tests
 powered-test
 
-# asset directories
-website
 
 # examples
 example
@@ -30,4 +30,19 @@ Gruntfile.js
 
 # misc
 *.gz
-*.md
+#*.md
+
+.git
+.github
+.travis
+.travis.yml
+.jshintrc
+.jshintignore
+.gitmodules
+.bithoundrc
+.grenrc.json
+
+
+
+npm-debug.log
+yarn-error.log

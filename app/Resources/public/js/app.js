@@ -3,7 +3,7 @@
  *	ENTRY POINT WEBPACK bundle APP
  *
  */
-require("../css/app.css");
+import "../css/app.css";
 
 module.exports = function () {
   /*
@@ -22,3 +22,14 @@ module.exports = function () {
   };
   return new App();
 }();
+
+/*
+ * HMR
+ */
+if (module.hot) {
+  module.hot.accept((err) => {
+    if (err) {
+      console.error('Cannot apply HMR update.', err);
+    }
+  });
+}
