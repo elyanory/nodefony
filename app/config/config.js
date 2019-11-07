@@ -27,16 +27,22 @@ module.exports = {
    *  For watch all components
    *      watch:                    true
    *  or
-   *      watch:{
-   *        controller:             true
-   *        config:                 true        // only routing and services
-   *        views:                  true
-   *        translations:           true
+   *      watch : {
+   *        controllers:             true,
+   *        config:                 true,        // only routing and services
+   *        views:                  true,
+   *        translations:           true,
    *        webpack:                true
    *      }
    *
    */
-  watch: true,
+    watch: true,
+    /**
+   * DEV SERVER
+   */
+  devServer: {
+    hot: false
+  },
 
   /**
    *    OVERRIDE MONITORING BUNDLE
@@ -59,17 +65,17 @@ module.exports = {
    *    see FRAMEWORK BUNDLE config for more options
    *
    */
-  "framework-bundle": {
-    webpack: {
-      cache: true,
-      outputFileSystem: "file-system" // memory-fs not implemented yet
-    },
-    stats: {
-      colors: true,
-      verbose: true,
-      maxModules: 16 // Infinity
-    }
-  },
+   "framework-bundle": {
+     webpack: {
+       cache: true,
+       outputFileSystem: "file-system", // memory-fs not implemented yet
+       stats: {
+         colors: true,
+         verbose: true,
+         maxModules: 16 // Infinity
+       }
+     }
+   },
 
   /**
    *  OVERRIDE MAIL Bundle
@@ -324,33 +330,35 @@ module.exports = {
    * OVERRIDE ELASTIC BUNDLE SETTINGS
    *   elasticsearch
    *
-   *	 options  :  https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/configuration.html
+   *	 options  :  https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-configuration.html
    *
    */
-  "elastic-bundle": {
-    elasticsearch: {
-      globalHostsOptions: {
-        protocol: "http"
-      },
-      globalOptions: {
-        ssl: {
-          //key : path.resolve("config","certificates","server","privkey.pem"),
-          //cert : path.resolve("config","certificates","server","cert.pem"),
-          //ca : path.resolve("config","certificates","ca","nodefony-root-ca.crt.pem")
-        }
-      },
-      connections: {
-        main: {
-          hosts: [{
-            host: "localhost",
-            port: 9200
-          }],
-          sniffOnStart: true,
-          sniffInterval: 5000
-        }
-      }
-    }
-  },
+   "elastic-bundle": {
+     elasticsearch: {
+       globalOptions: {
+         ssl: {
+           //key : path.resolve("config","certificates","server","privkey.pem"),
+           //cert : path.resolve("config","certificates","server","cert.pem"),
+           //ca : path.resolve("config","certificates","ca","nodefony-root-ca.crt.pem")
+         }
+       },
+       connections: {
+         main: {
+           name: "main",
+           nodes: ["http://localhost:9200"],
+           log: {
+             request: false,
+             response: false,
+             sniff: true,
+             resurrect: true
+           },
+           maxRetries: 10,
+           pingTimeout: 5000,
+           requestTimeout: 5000
+         }
+       }
+     }
+   },
 
   /**
    *  OVERRIDE SECURITY BUNDLE

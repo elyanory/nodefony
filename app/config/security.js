@@ -11,11 +11,17 @@ module.exports = {
      *  Strategy can be : none, migrate, invalidate
      */
     session_fixation_strategy: "migrate",
+    
     /**
      *  FIREWALL  PROVIDER
      */
     providers: {},
+
+    /**
+     *  FIREWALL  ENCODERS
+     */
     encoders: {},
+
     /**
      *  FIREWALL  Authorization
      *  Example :

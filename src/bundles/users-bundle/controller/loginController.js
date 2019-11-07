@@ -4,6 +4,16 @@ module.exports = class loginController extends nodefony.controller {
     super(container, context);
     this.security = this.get("security");
     this.startSession();
+    this.setCsrfToken("nodefony_csrf", {
+      secret: "Make him an offer he can't refuse",
+      cookie: {
+        signed: false,
+        secure: true,
+        sameSite: "strict",
+        path: "/login",
+        maxAge: 200
+      }
+    });
   }
 
   /**

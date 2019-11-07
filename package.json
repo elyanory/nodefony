@@ -1,17 +1,17 @@
 {
   "name": "nodefony-starter",
   "version": "1.0.0",
-  "description": "Project Description",
+  "description": "Nodefony Starter ",
   "main": "nodefony",
   "scripts": {
     "nodefony": "nodefony",
     "pm2": "pm2",
     "start": "nodefony",
+    "dev": "nodefony dev",
     "build": "nodefony build",
     "rebuild": "nodefony rebuild",
     "stop": "nodefony stop",
     "prod": "nodefony prod",
-    "dev": "nodefony dev",
     "kill": "nodefony kill",
     "test": "nodefony test",
     "help": "nodefony -h"
@@ -27,21 +27,23 @@
   "os": [
     "darwin",
     "linux",
-    "freebsd"
+    "freebsd",
+    "win32"
   ],
   "engines": {
     "node": ">=8"
   },
   "dependencies": {
-    "mongoose": "^5.7.3",
-    "nodefony": "^5.0.9",
-    "sequelize": "^5.19.2",
-    "webpack": "^4.41.0",
-    "webpack-dev-server": "^3.8.2"
+    "mongoose": "^5.7.7",
+    "nodefony": "^5.1.1",
+    "sequelize": "^5.21.2",
+    "sequelize-cli": "^5.5.1",
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0"
   },
   "devDependencies": {
-    "node-gyp": "^6.0.0",
-    "node-pre-gyp": "^0.13.0"
+    "node-gyp": "^6.0.1",
+    "node-pre-gyp": "^0.14.0"
   },
   "author": "admin <admin@nodefony.com>",
   "readmeFilename": "README.md",

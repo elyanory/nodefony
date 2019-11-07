@@ -41,7 +41,7 @@ module.exports = {
     realtime: true,
     monitoring: true,
     mail: true,
-    documentation: true,
+    documentation: false,
     unitTest: true,
     redis: false,
     mongo: false,
@@ -83,17 +83,14 @@ module.exports = {
 
     /**
      *  BUNDLES LOCAL REGISTRATION
-     *    Examples :
+     *
      *       bundles:{
-     *         "hello-bundle" : "file:src/bundles/hello-bundle",
-     *         "hello-bundle" : path.resolve("src", "bundles", "hello-bundle")
-     *         "hello-bundle" : path.resolve(__dirname, "..", "src", "bundles", "hello-bundle"),
+     *         "hello-bundle" : "file:src/bundles/hello-bundle"
+     *         "test-bundle"  : path.resolve("src", "bundles", "test-bundle")
      *       }
      */
     bundles: {
-      "users-bundle": path.resolve("src", "bundles", "users-bundle"),
-      //"vue-bundle": path.resolve("src", "bundles", "vue-bundle"),
-      //"react-bundle": path.resolve("src", "bundles", "react-bundle")
+      "users-bundle": path.resolve("src", "bundles", "users-bundle")
     },
     /**
      * SYSLOG NODEFONY
